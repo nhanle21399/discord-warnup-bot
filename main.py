@@ -75,11 +75,10 @@ async def check_warnup_loop():
 # ==========================
 # Manual Command: !check
 # ==========================
-
-
 intents = discord.Intents.default()
-intents.members = True
 intents.message_content = True
+intents.members = True
+
 client = commands.Bot(command_prefix="!", intents=intents)
 
 @client.event
@@ -93,11 +92,11 @@ async def on_ready():
     check_warnup_loop.start()
     
 import os
+print("TOKEN check:", os.getenv("TOKEN"))
 
 from keep_alive import keep_alive
 keep_alive()
 import os
 
 TOKEN = os.getenv("TOKEN")
-
 
