@@ -91,12 +91,11 @@ async def on_ready():
     print(f"Đã đăng nhập dưới tên {client.user}")
     check_warnup_loop.start()
     
-import os
-print("TOKEN check:", os.getenv("TOKEN"))
 
 from keep_alive import keep_alive
 keep_alive()
-import os
 
+import os
 TOKEN = os.getenv("TOKEN")
 
+print("TOKEN check:", TOKEN)  # Để debug
