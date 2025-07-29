@@ -96,4 +96,5 @@ import os
 
 from keep_alive import keep_alive
 keep_alive()
-TOKEN = os.getenv("TOKEN")  # Lấy token từ biến môi trường
+client.run(TOKEN)
+
