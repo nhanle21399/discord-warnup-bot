@@ -1,7 +1,13 @@
+import os
+from keep_alive import keep_alive
+
 import discord
 from discord.ext import commands, tasks
 import datetime
 from datetime import timezone, timedelta
+
+TOKEN = os.getenv("TOKEN")
+print("TOKEN check:", TOKEN)
 
 # ==========================
 # Config
@@ -64,6 +70,11 @@ async def perform_warnup_check():
         await report_channel.send(
             f"✅ Tất cả đã gửi hình warnup ngày {today.strftime('%d/%m/%Y')}!")
 
+# ==========================
+# CHECK FUNCTION
+# ==========================
+async def perform_warnup_check():
+    # check logic...
 
 # ==========================
 # Auto Check at 10:00PM VN
@@ -91,11 +102,6 @@ async def on_ready():
     print(f"Đã đăng nhập dưới tên {client.user}")
     check_warnup_loop.start()
     
-
-from keep_alive import keep_alive
+# ========= RUN ==========
 keep_alive()
-
-import os
-TOKEN = os.getenv("TOKEN")
-
-print("TOKEN check:", TOKEN)  # Để debug
+client.run(TOKEN)
