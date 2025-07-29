@@ -74,7 +74,8 @@ async def perform_warnup_check():
 # CHECK FUNCTION
 # ==========================
 async def perform_warnup_check():
-    # check logic...
+    # Ví dụ nội dung hàm
+    print("Đang kiểm tra warnup...")
 
 # ==========================
 # Auto Check at 10:00PM VN
