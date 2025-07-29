@@ -6,7 +6,6 @@ from datetime import timezone, timedelta
 # ==========================
 # Config
 # ==========================
-TOKEN = "MTM5OTQwODczNTIxMzk3NzY1MA.GAIdPD.9FnHA18cuEIPdsGrY9juPIX7jBgpdu3Vg7wMqY"
 GUILD_ID = 1249195207199555686
 IMAGE_CHANNEL_ID = 1376858868503810088
 REPORT_CHANNEL_ID = 1399403753387593789
@@ -93,6 +92,8 @@ async def on_ready():
     print(f"Đã đăng nhập dưới tên {client.user}")
     check_warnup_loop.start()
     
+import os
+
 from keep_alive import keep_alive
 keep_alive()
-client.run(TOKEN)
+TOKEN = os.getenv("TOKEN")  # Lấy token từ biến môi trường
